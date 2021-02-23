@@ -12,10 +12,13 @@ public class Main {
         args[1]: output filename
      */
     public static void main(String[] args) throws IOException {
-        List<String> lines = FileUtils.readLines(args[0]);
+        String inputFile = "test";
+        String outputFile = "test";
+
+        List<String> lines = FileUtils.readLines(inputFile);
 
         // Do stuff
 
-        FileUtils.writeLines(lines, args[1]);
+        FileUtils.writeLines(lines, outputFile);
     }
 }
