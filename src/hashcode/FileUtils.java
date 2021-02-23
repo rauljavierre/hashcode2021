@@ -10,9 +10,12 @@ import java.util.Scanner;
 
 public class FileUtils {
 
-    public static List<String> readLines(String path) throws FileNotFoundException {
+    public static String DATA_IN_PATH = "./resources/data-in/";
+    public static String DATA_OUT_PATH = "./resources/data-out/";
+
+    public static List<String> readLines(String filename) throws FileNotFoundException {
         List<String> lines = new ArrayList<>();
-        File file = new File(path);
+        File file = new File(DATA_IN_PATH + filename);
         Scanner reader = new Scanner(file);
         while(reader.hasNextLine()) {
             lines.add(reader.nextLine());
@@ -21,8 +24,8 @@ public class FileUtils {
         return lines;
     }
 
-    public static void writeLines(List<String> lines, String path) throws IOException {
-        FileWriter writer = new FileWriter(path);
+    public static void writeLines(List<String> lines, String filename) throws IOException {
+        FileWriter writer = new FileWriter(DATA_OUT_PATH + filename);
         for (String line : lines) {
             writer.write(line + "\n");
         }
